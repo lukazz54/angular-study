@@ -1,0 +1,13 @@
+<app-toolbar-navigation></app-toolbar-navigation>
+<!--
+    output eh os dados enviados do filho para o pai
+    identificado por () o que vai dentro deles é o atributo
+    nomeado do tipo Emitter que esta no filho
+    e apos o = o metodo que esta declarado para receber os dados
+    eh o metodo que esta no componente pai
+-->
+<app-products-table [products]="productsData"
+    (productEvent)="handleProductAction($event)"
+    (deleteProductEvent)="handleDeleteProductAction($event)">
+</app-products-table>
+<p-confirmDialog [style]="{width: '50vw'}"></p-confirmDialog>

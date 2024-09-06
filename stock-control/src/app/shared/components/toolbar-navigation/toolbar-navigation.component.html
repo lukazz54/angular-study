@@ -1,0 +1,58 @@
+<p-toolbar
+  styleClass="bg-indigo-800">
+<div class="p-toolbal-group-start">
+  <!--
+    routerLinkActive => parametro para indicar se eu estou na
+    rota dashboard(por exemplo) eu executarei uma classe css
+    isso ajuda em um toolbar reutilizavel por varios componentes
+  -->
+  <p-button
+      icon="pi pi-home"
+      label="Dashboard"
+      routerLink="/dashboard"
+      styleClass="bg-indigo-800 p-button-secundary"
+      routerLinkActive="exact_route">
+  </p-button>
+</div>
+
+  <div class="p-toolbar-group-center">
+    <p-button
+      icon="pi pi-cart-plus"
+      label="Produtos"
+      routerLink="/products"
+      styleClass="bg-indigo-800 p-button-secundary"
+      routerLinkActive="exact_route"
+      class="mr-2">
+  </p-button>
+  <p-button
+      icon="pi pi-ticket"
+      label="Categorias"
+      routerLink="/categories"
+      styleClass="bg-indigo-800 p-button-secundary"
+      routerLinkActive="exact_route"
+      class="mr-2">
+  </p-button>
+  <p-button
+      icon="pi pi-credit-card"
+      label="Efetuar Vendas"
+      routerLink="/products"
+      (onClick)="handleSaleProduct()"
+      styleClass="bg-indigo-800 p-button-secundary"
+      class="mr-2">
+  </p-button>
+  </div>
+  <!--
+    OBS: Ao ver o event onClick isso indica que o elemento ele é externo
+    como no caso do p-button, esse é o nome que o PrimNG deu para o evento
+    Para elementos do proprio navegador, como o <button> ai
+    o nome do evento se torna click, que eh o nome que o Angular deu ao evento
+  -->
+  <div class="-toolbar-group-end">
+    <p-button
+      label="Sair"
+      icon="pi pi-sign-out"
+      styleClass="p-button-danger"
+      (onClick)="handleLogout()">
+    </p-button>
+  </div>
+</p-toolbar>
